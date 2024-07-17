@@ -1,0 +1,841 @@
+/* Global Styles */
+:root{
+    --background-button: hsl(40, 64%, 50%);
+    --hover-button: hsl(40, 64%, 40%);
+}
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+html{
+    font-family: 600;
+    scroll-behavior: smooth;
+    font-family: "Cairo", sans-serif;
+}
+body{
+    overflow-x: hidden;
+    background: #000;
+    line-height: 1.5;
+    color: #fff;
+}
+li{list-style: none;}
+span,
+button{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+img{
+    /* display: block; */
+}
+/* Header Styles */
+.header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.header.active{
+    position: fixed;
+    background-color: #000;
+    box-shadow: 0 2px 10px hsla(209, 40%, 14%, 10%);;
+    animation: slideIn 500ms ease forwards;
+}
+@keyframes slideIn{
+  0%{transform: translateY(-100%);}
+  100%{transform: translateY(0);}
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 16px;
+    padding-inline: 30px;
+    width: 100%;
+}
+.nav-toggle-btn{
+    color: #fff;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    right: -350px;
+    max-width: 350px;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    z-index: 10;
+    transition: 400ms cubic-bezier(0.05, 0.83, 0.52, 0.97);
+    visibility: hidden;
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.navbar.active{
+    visibility: visible;  
+    transform: translateX(-350px);
+    transition-duration: 300ms;
+}
+.navbar-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-block: 16px 150px;
+    padding-inline: 20px;
+}
+
+.navbar-list{
+    width: 100%;
+}
+.navbar-item{
+    direction: rtl;
+    white-space: nowrap; /* يمنع النص من الانقسام إلى سطرين */ 
+}
+.navbar-link{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.navbar-link:hover{
+    background-color: rgb(209, 209, 209 , 0.1);
+    border-radius: 9px;
+    transition: 0.3s ease;
+    height: 70px;
+}
+.btn-center {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    margin-bottom: 30px; 
+    padding-inline: 20px;
+}
+.btn-big{
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    border-radius: 9px;
+    font-size: 30px;
+    font-weight: 600;
+    background-color: var(--background-button);
+    white-space: nowrap; /* يمنع النص من الانقسام إلى سطرين */ 
+}
+.btn-big:hover{
+    background-color: var(--hover-button);
+    transition: 1s ease-in-out;
+}
+/* SECTION 1 */
+.section-img-text .container{
+    
+} 
+.section-img-text img{
+    width: calc(100%);
+}
+.section-img-text .container .text{
+    padding-inline: 16px;
+    text-align: right;
+}
+.section-img-text .container .text .title{
+    white-space: nowrap;
+    font-size: 1.3rem;
+    font-weight: 800;
+} 
+.section-img-text .container .text .discription{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.section-img-text .container .btn-center{
+    padding-block: 40px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: end;
+}
+.section-img-text .btn-big{
+    max-width: 130px;
+    height: 45px;
+}
+/* SECTION 2 */
+
+
+.section-2 .container .text{
+    text-align: center;
+    padding-inline: 10px;
+}
+.section-2 .container .dest{
+    font-weight: 500;   
+    font-size: 1.29rem;
+}
+.section-2 .images{
+    display: grid;
+    place-items: center;
+}
+.section-2 .images img{
+    width: calc(100%);
+    padding-block: 10px;
+    padding-inline: 26px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.section-2 .container .title-2{
+    white-space: pre-wrap;
+}
+.section-2 .container .btn-center{
+    margin-block: 50px;
+}
+.section-2 .container .btn-big{
+    height: 50px;
+}
+/* SECTION 3 */
+.section-3 .container{
+    padding-inline: 20px;
+}
+.section-3 .container .img-opacity-text{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+.section-3 .container .img-opacity-text img{
+    position: relative;
+    width: calc(80%);
+    left: -5%;
+}
+.section-3 .container .img-opacity-text .text{
+    position: relative;
+    top: -60px;
+}
+.section-3 .container .img-opacity-text address{
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+}
+.section-3 .container .img-opacity-text p{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-block: 30px;
+    text-align: right;
+    padding-inline: 16px;
+}
+
+.section-3 .container .btn-center{
+    margin-left: 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.section-3 .btn-big{
+    max-width: 200px;
+    height: 45px;
+}
+.section-3 .container .center-card{
+    width: calc(100%);
+    min-width: 250px;
+    height: 100%;
+    min-height: 385px;
+    background-color: #fff;
+    color: #000;
+    text-align: right;
+}
+
+.section-3 .container .center-card .card{
+    display: flex;
+    justify-content: space-between;
+}
+.section-3 .container .card address{
+    font-weight: 900;
+}
+.section-3 .container .card span{
+    color: rgb(155, 154, 154);
+    position: relative;
+    top: 40px;
+    white-space: nowrap;
+    left: -20%;
+}
+.section-3 .container .card .card-1{
+    padding-inline: 3px;
+}
+
+.section-3 .container .center-card .card img{
+    width: calc(100%);
+}
+/* SECTION 4 */
+.section-4 .container {
+    padding-block: 50px;
+}
+.section-4 .container .text-into-image{
+    /* padding-inline: 20px; */
+    display: grid;
+    place-items: center;
+
+}
+.section-4 .container .text-into-image .text{
+    position: absolute;
+    text-align: right;
+    padding-inline: 10px;
+    background-color: rgba(111, 110, 110, 0.4);
+    width: 100%;
+    height: 50vh;
+    display: grid;
+    place-content: center;
+}
+.section-4 .container .text h1{
+    font-size: 1.6rem;
+    white-space: nowrap;
+    font-weight: 800;
+}
+.section-4 .container .text p{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.section-4 .container .text-into-image img{
+    width: 100%;
+    height: 50vh;
+    background-attachment: scroll, local;
+    object-fit: cover;
+    position: relative;
+
+}
+
+/* SECTION 5 */
+.section-5 .container img{
+    width: calc(100%);
+}
+.section-5 .container .part-one .image img,
+.section-5 .container .part-two .image img
+{
+    min-width:300px;
+    height:300px;
+    object-fit: cover; 
+}
+.section-5 .container .part-one .image-top-text,
+.section-5 .container .part-two .image-top-text
+{
+    position: relative;
+    width: 100%;
+}
+.section-5 .container .part-one .image-top-text img,
+.section-5 .container .part-two .image-top-text img
+{
+    display: block;
+    width: calc(45%);
+    float: right;   
+}
+.section-5 .container .part-one .image-top-text .text,
+.section-5 .container .part-two .image-top-text .text
+{
+    position:absolute;
+    top: 50%;
+    text-align: right;
+    padding-inline: 16px;
+}
+.section-5 .container .part-two{
+    padding-block: 280px;
+}
+.section-5 .container .part-one .image-top-text .text h1
+{
+    font-size: 2rem;
+    white-space: nowrap;
+}
+.section-5 .container .part-two .image-top-text .text h1{
+    font-size: 2rem;
+}
+.section-5 .container .part-one .image-top-text .text p,
+.section-5 .container .part-two .image-top-text .text p
+{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+/* FOOTER */
+.footer .container{
+    padding-top: 170px;
+    padding-inline: 20px;
+    text-align: center;
+}
+.footer .container .address-dest p{
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+}
+.footer .container nav{
+    padding-top: 50px;
+}
+.footer .container nav h3{
+    font-size: 2rem;
+    white-space:nowrap;
+}
+
+.footer .container .items-list{
+    color: var(--background-button);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.footer .container .title .gmail,
+.footer .container .title .phone,
+.footer .container .title .code-title{
+    font-size: 1.6rem;
+    font-weight: 700;
+    white-space: nowrap;
+    line-height: 2;
+}
+.footer .social-media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 20px;
+}
+.footer .social-media .icon{
+        border: 3.6px solid #fff;
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        margin-left: 20px;
+}
+.footer .social-media {
+    font-size: 2rem;
+}
+
+.footer .end-text{
+    text-align: center;
+    padding-inline: 20px;
+    padding-block: 30px;
+}
+
+.footer .end-text span{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* Media Queries */
+
+@media (min-width:768px){
+    .section-2 .container .images,
+    .section-img-text .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    .section-2 .container .images{
+        padding-inline: 190px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .section-2 .container .images img{
+        width: calc(30%);
+        min-width: 250px;
+    }
+
+
+    .section-3 .container .img-opacity-text img{
+        width: calc(30%);
+    }
+
+    /* SECTION 4 */
+    .section-4 .container .text h1{
+        font-size: 2rem;
+    }
+    .section-4 .container .text p{
+        font-size: 1.7rem;
+    }
+    /* SECTION 5 */
+    .section-5 .container .part-two{
+        top: 0px;
+    }
+    .section-5 .container .part-two,
+    .section-5 .container .part-one {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        direction: rtl;
+    }
+    .section-5 .container .part-two{
+        direction: ltr;
+        padding-block: 0px;
+    }
+    .section-5 .container .part-one .image-top-text img,
+    .section-5 .container .part-two .image-top-text img{
+        width: calc(35%);
+    }
+
+    .section-5 .container .part-one .image img,
+    .section-5 .container .part-two .image img
+    { 
+        min-width:400px;
+        min-height:250px;
+        object-fit: cover;
+    }
+    .section-5 .container .part-one .image-top-text img{
+        float: left;
+    }
+    .section-5 .container .part-one .image-top-text,
+    .section-5 .container .part-two .image-top-text
+    {
+        margin-bottom: 150px;
+    }
+    .section-5 .container .part-one .image-top-text .text,
+    .section-5 .container .part-two .image-top-text .text{
+        position: absolute;
+        top: -5%;
+        text-align: right;
+        padding-inline: 16px;
+    }
+    .section-5 .container .part-one .image-top-text .text,
+    .section-5 .container .part-two .image-top-text .text 
+    {
+        padding-block: 40px;
+    }
+}
+
+@media (min-width: 992px){
+    /* HEADER */
+    .nav-toggle-btn,
+    .navbar-top{display: none;}
+
+    .header .container{
+        align-items: center;
+        padding-inline: 0px;
+    }
+    .navbar3{
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar,
+    .navbar.active{
+        all: unset;
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+
+    }
+    .navbar-list{
+        width: 100%;
+        direction: rtl;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .navbar-item{
+        width: 100%;
+    }
+    .navbar-link{
+        font-size: 1.3rem;
+    }
+    .btn-center {
+        margin-bottom: 10px; 
+        
+    }
+    .btn-big{
+        min-width: 130px;
+        padding-block: 40px;
+        display: grid;
+        place-content: center;
+    }
+    .header.active{
+        padding-block: 10px;
+    }
+    /* SECTION 1 */
+    
+    .section-img-text .container .text .title{
+        font-size: 1.6rem;
+    }
+    .section-img-text .container .text .discription{
+        font-size: 1.4rem;
+    }
+    /* SECTION 2 */
+    .section-2 .container{
+        padding-block: 110px;
+    }
+    .section-2 .container .images img{
+        width: calc(40%);
+    }
+   
+    .section-2 .container .title-2{
+        font-size: 2rem;
+    }
+    .section-2 .container .dest{font-size: 1.4rem;}
+    /* SECTION 3 */
+    .section-3 .container {
+        display: flex;
+        align-items: center;
+    }
+    .section-3 .container .img-opacity-text img{
+        width: calc(51%);
+    }
+
+    .section-3 .container .center-card{
+        width: calc(75%);
+        min-width:500px;
+        height: 100%;
+        min-height: 450px;
+        margin-left: 0px;
+    }
+    /* .section-3 .container .text{
+        width: 700px;
+    } */
+    .section-3 .container .text address{
+        font-size: 1.6rem;
+    }
+    /* SECTION 4 */
+    .section-4 .container{
+        padding-inline: 70px;
+    }
+    .section-4 .container .text h1{
+        font-size: 2.4rem;
+        position: relative;
+        left: -1%;
+    }
+    .section-4 .container .text p{
+        white-space: pre-line;
+        width: 50%;
+        position: relative;
+        left: 48%;
+    }
+    
+    /* SECTION 5 */
+
+    .section-5 .container .part-one .image img,
+    .section-5 .container .part-two .image img
+    {
+        min-width: 700px;
+        height: 450px;
+    }
+    .section-5 .container .part-two{
+        top: -8px;
+    }
+    .section-5 .container .part-one .image-top-text .text,
+    .section-5 .container .part-two .image-top-text .text 
+    {
+        padding-block: 130px;
+    }
+    
+    /* FOOTER */
+    .footer .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer .container nav h3{
+        font-size: 1.4rem;
+    }
+
+    .footer .container .items-list{
+        font-size: 1rem;
+    }
+
+    .footer .container .title .gmail,
+    .footer .container .title .phone,
+    .footer .container .title .code-title{
+        font-size: 1.2rem;
+    }
+}   
+
+
+
+
+@media (min-width: 1440px){
+    /* HEADER  */
+    header .container {
+        padding-inline: 60px;
+    }
+    /* SECTION 1 */
+    .section-img-text .container .text .title{
+        font-size: 2rem;
+    }
+    /* SECTION 2 */
+    .section-2 .container .images img{
+        width: calc(40%);
+    }
+    .section-2 .container .title-2{
+        font-size: 2.4rem;
+    }
+    .section-2 .container .dest{font-size: 1.8rem;}
+    /* SECTION 3 */
+    .section-3 .container{
+        padding-inline: 110px;
+    }
+    .section-3 .container .text img{
+        width: 700px;
+    }
+    .section-3 .container .text address{
+        font-size: 1.9rem;
+    }
+
+    .section-3 .container .center-card{
+        margin-left: 110px;
+    }
+
+    /* SECTION 5 */
+
+    .section-5 .container .part-one .image img,
+    .section-5 .container .part-two .image img
+    {
+        min-width: 900px;
+        height: 550px;
+    }
+
+    .section-5 .container .part-one .image-top-text .text,
+    .section-5 .container .part-two .image-top-text .text 
+    {
+        padding-block: 180px;
+    }
+    /* FOOTER */
+    .footer .container {
+        padding-inline: 50px;
+    }
+    .footer .container nav h3{
+        font-size: 2rem;
+    }
+    
+    .footer .container .items-list{
+        font-size: 1.3rem;
+    }
+    .footer .container .title .gmail,
+    .footer .container .title .phone,
+    .footer .container .title .code-title{
+        font-size: 1.6rem;
+    }
+}
+@media (min-width: 2560px){
+    /* HEADER */
+    .header .container {
+        padding-inline: 110px;
+    }
+    .header .container .logo img{
+        width: 250px;
+    }
+    .navbar-link{
+        font-size: 2.5rem;
+    }
+    .header .container .btn-big{
+        min-width: 300px;
+        font-size: 2.5rem;
+    }
+    /* SECTION 1 */
+    .section-img-text .container .text{
+        padding-inline: 89px;
+        width: 1500px;
+    }
+    .section-img-text .container .text .title{
+        font-size: 3.5rem;
+    }
+    .section-img-text .container .text .discription{
+        font-size: 2.5rem;
+    }
+    .section-img-text .container .text .btn-big{
+        min-width: 350px;
+        font-size: 3rem;
+    }
+    /* SECTION 2 */
+    .section-2 .container .title-2{
+        font-size: 3.4rem;
+    }
+    .section-2 .container .dest{font-size: 2.7rem; }
+
+    .section-2 .container .btn-big {
+        font-size: 3rem;
+    }
+    /* SECTION 3 */
+    .section-3 .container .center-card{
+        margin-left: 380px;
+        min-height: 750px;
+        width: calc(50%);
+        min-width: 900px;
+    }
+    .section-3 .container .img-opacity-text .text address{
+        font-size: 2.8rem;
+    }
+    .section-3 .container .img-opacity-text .text p{
+        font-size: 1.9rem;
+    }
+
+    .section-3 .container .card-1 address{ 
+        font-size: 2.3rem;
+        padding-inline: 30px;
+        padding-block: 40px;
+    }
+    .section-3 .container .card-1 p{
+        font-size: 2rem;
+        padding-inline: 30px;
+    }
+    /* SECTION 4 */
+    .section-4 .container .text h1{
+        font-size: 3.5rem;
+        left: -3%;
+    }
+    .section-4 .container .text p{
+        font-size: 2.6rem;
+        left: 46%;
+    }
+
+    /* SECTION 5 */
+    .section-5 .container .part-one .image img,
+    .section-5 .container .part-two .image img
+    {
+        min-width: 1500px;
+        height: 1250px;
+    }
+    .section-5 .container .part-one .image-top-text .text h1
+    {
+        font-size: 4rem;
+    }
+    .section-5 .container .part-two .image-top-text .text h1{
+        font-size: 4rem;
+    }
+    .section-5 .container .part-one .image-top-text .text p,
+    .section-5 .container .part-two .image-top-text .text p
+    {
+        font-size: 2rem;
+    }
+    .section-5 .container .part-one .image-top-text .text,
+    .section-5 .container .part-two .image-top-text .text 
+    {
+        padding-block: 240px;
+    }
+
+    /* FOOTER */
+    .footer .container nav h3{
+        font-size: 2.5rem;
+    }
+    
+    .footer .container .items-list{
+        font-size: 1.8rem;
+    }
+    .footer .container .title .gmail,
+    .footer .container .title .phone,
+    .footer .container .title .code-title{
+        font-size: 2rem;
+    }
+}
